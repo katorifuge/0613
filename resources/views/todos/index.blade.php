@@ -13,7 +13,6 @@
     <div class="container">
         <div class="card">
             <p class="title">Todo List</p>
-            {{-- <p>{{$txt}}</p> --}}
                 @if (count($errors) > 0)
                     <ul>
                     @foreach ($errors->all() as $error)
@@ -23,7 +22,7 @@
                 @endif
             <form action="/todo/create" method="post" class="flex between mb-30">
                 @csrf
-            <input type="text" class="input-add" name="{{old('content')}}" />
+            <input type="text" class="input-add" name="content" />
             <input class="button-add" type="submit" value="追加" />
             </form>
             <table>
@@ -33,8 +32,13 @@
                     <th>更新</th>
                     <th>削除</th>
                 </tr>
-                <td>
-                </td>
+                @foreach($items as $item)
+                <tr>
+                    <td>
+                        {{ $item->content}}
+                    </td>
+                </tr>
+                @endforeach
                 <form action="/todo/update" method="post">
                     @csrf
                     <input type="hidden" name="_token" value="" />

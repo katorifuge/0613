@@ -12,6 +12,7 @@ class TodoController extends Controller
     public function index(Request $request)
     {
         $items = Todo::all();
+        $items = DB::select('select * from todo');
         return view('todos.index',['items' => $items]);
     }
 
