@@ -10,7 +10,7 @@ class Todo extends Model
     use HasFactory;
     protected $guarded = array('id');
     public static $rules = array(
-        'content' => 'required', 'numeric|between:0,20'
+        'content' =>'required|max:20',
     );
     public function getData()
     {

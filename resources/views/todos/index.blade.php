@@ -22,7 +22,7 @@
                     </ul>
                 @endif
             <form action="/todo/create" method="post" class="flex between mb-30">
-            <input type="hidden" name="_token" value="">
+                @csrf
             <input type="text" class="input-add" name="{{old('content')}}" />
             <input class="button-add" type="submit" value="追加" />
             </form>
@@ -36,6 +36,7 @@
                 <td>
                 </td>
                 <form action="/todo/update" method="post">
+                    @csrf
                     <input type="hidden" name="_token" value="" />
                     <td>
                         <input type="text" class="input-update" value="" name="content" />
@@ -46,6 +47,7 @@
                 </form>
                 <td>
                     <form action="/todo/delete" mathod="post">
+                        @csrf
                         <input type="hidden" name="_token" value="">
                         <button class="button-delete">削除</button>
                     </form>
