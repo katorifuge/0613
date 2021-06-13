@@ -13,7 +13,7 @@
     <div class="container">
         <div class="card">
             <p class="title">Todo List</p>
-            <p>{{$txt}}</p>
+            {{-- <p>{{$txt}}</p> --}}
                 @if (count($errors) > 0)
                     <ul>
                     @foreach ($errors->all() as $error)

@@ -16,6 +16,7 @@ class TodosTableSeeder extends Seeder
     {
         $param = [
             'content' => 'ダミー内容',
+            'created_at' => '2021-06-13 00:00:00',
         ];
         DB::table('todos')->insert($param);
     }
